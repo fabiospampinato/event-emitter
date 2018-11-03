@@ -1,8 +1,5 @@
 # Event Emitter
 
-![Issues](https://img.shields.io/github/issues/fabiospampinato/event-emitter.svg)
-[![NPM version](https://img.shields.io/npm/v/@fabiospampinato/event-emitter.svg)](https://www.npmjs.com/package/@fabiospampinato/event-emitter)
-
 Simple EventEmitter implementation.
 
 ## Install
