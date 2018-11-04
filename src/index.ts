@@ -1,7 +1,8 @@
 
 /* IMPORT */
 
-import * as _ from 'lodash';
+import * as isUndefined from 'lodash.isundefined';
+import * as uniqueId from 'lodash.uniqueid';
 import {bindings, event, events, handler, handlers} from './types';
 import {isEvents, isHandlers} from './types';
 
@@ -70,7 +71,7 @@ class EventEmitter {
 
     if ( isHandlers ( handler ) ) return handler.map ( handler => this.on ( event, handler ) )[0];
 
-    if ( _.isUndefined ( this._bindings[event] ) ) this._bindings[event] = [];
+    if ( isUndefined ( this._bindings[event] ) ) this._bindings[event] = [];
 
     if ( this.hasHandler ( event, handler ) ) throw new Error ( '[event-emitter] The handler is already bound to the event' );
 
@@ -103,7 +104,7 @@ class EventEmitter {
     };
 
     handlerOne._handler = handler;
-    handlerOne._ee = handler._ee = handler._ee || _.uniqueId ();
+    handlerOne._ee = handler._ee = handler._ee || uniqueId ();
 
     return this.on ( event, handlerOne );
 
@@ -124,13 +125,13 @@ class EventEmitter {
 
     if ( isHandlers ( handler ) ) return handler.map ( handler => this.off ( event, handler ) )[0];
 
-    if ( _.isUndefined ( handler ) ) {
+    if ( isUndefined ( handler ) ) {
 
       delete this._bindings[event];
 
     } else if ( this._bindings[event] ) {
 
-      this._bindings[event] = this._bindings[event].filter ( h => h !== handler && ( !h.hasOwnProperty ( '_ee' ) || h._ee !== handler._ee ) );
+      this._bindings[event] = this._bindings[event].filter ( h => h !== handler && ( !h.hasOwnProperty ( '_ee' ) || h._ee !== ( handler as handler )._ee ) );
 
     }
 

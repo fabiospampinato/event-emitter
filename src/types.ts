@@ -1,7 +1,10 @@
 
 /* IMPORT */
 
-import * as _ from 'lodash';
+import * as every from 'lodash.every';
+import * as isArray from 'lodash.isarray';
+import * as isString from 'lodash.isstring';
+import * as isFunction from 'lodash.isfunction';
 
 /* TYPES */
 
@@ -14,16 +17,16 @@ type handlers = handler[];
 /* TYPE GUARDS */
 
 function isEvent ( x ): x is event {
-  return _.isString ( x );
+  return isString ( x );
 }
 function isEvents ( x ): x is events {
-  return _.isArray ( x ) && _.every ( x, _.isString );
+  return isArray ( x ) && every ( x, isString );
 }
 function isHandler ( x ): x is handler {
-  return _.isFunction ( x );
+  return isFunction ( x );
 }
 function isHandlers ( x ): x is handlers {
-  return _.isArray ( x ) && _.every ( x, _.isFunction );
+  return isArray ( x ) && every ( x, isFunction );
 }
 
 /* EXPORT */
