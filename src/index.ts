@@ -1,8 +1,8 @@
 
 /* IMPORT */
 
-import * as isUndefined from 'lodash.isundefined';
-import * as uniqueId from 'lodash.uniqueid';
+import isUndefined from 'lodash/isUndefined';
+import uniqueId from 'lodash/uniqueId';
 import {bindings, event, events, handler, handlers} from './types';
 import {isEvents, isHandlers} from './types';
 
@@ -131,7 +131,7 @@ class EventEmitter {
 
     } else if ( this._bindings[event] ) {
 
-      this._bindings[event] = this._bindings[event].filter ( h => h !== handler && ( !h.hasOwnProperty ( '_ee' ) || h._ee !== ( handler as handler )._ee ) );
+      this._bindings[event] = this._bindings[event].filter ( h => h !== handler && ( !h.hasOwnProperty ( '_ee' ) || h._ee !== handler._ee ) );
 
     }
 

@@ -1,10 +1,10 @@
 
 /* IMPORT */
 
-import * as every from 'lodash.every';
-import * as isArray from 'lodash.isarray';
-import * as isString from 'lodash.isstring';
-import * as isFunction from 'lodash.isfunction';
+import every from 'lodash/every';
+import isArray from 'lodash/isArray';
+import isString from 'lodash/isString';
+import isFunction from 'lodash/isFunction';
 
 /* TYPES */
 
