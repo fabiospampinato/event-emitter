@@ -1,8 +1,8 @@
 
 /* IMPORT */
 
-import isUndefined from 'lodash/isUndefined';
-import uniqueId from 'lodash/uniqueId';
+import isUndefined = require ( 'lodash/isUndefined' );
+import uniqueId = require ( 'lodash/uniqueId' );
 import {bindings, event, events, handler, handlers} from './types';
 import {isEvents, isHandlers} from './types';
 

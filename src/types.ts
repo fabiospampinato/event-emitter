@@ -1,10 +1,10 @@
 
 /* IMPORT */
 
-import every from 'lodash/every';
-import isArray from 'lodash/isArray';
-import isString from 'lodash/isString';
-import isFunction from 'lodash/isFunction';
+import every = require ( 'lodash/every' );
+import isArray = require ( 'lodash/isArray' );
+import isString = require ( 'lodash/isString' );
+import isFunction = require ( 'lodash/isFunction' );
 
 /* TYPES */
 
