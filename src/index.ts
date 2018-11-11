@@ -164,4 +164,4 @@ class EventEmitter {
 
 /* EXPORT */
 
-export = Object.assign ( EventEmitter, { default: EventEmitter } );
+export default EventEmitter;
